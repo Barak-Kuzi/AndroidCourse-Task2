@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C4F3DFDF"
+    android:orientation="horizontal"
+    tools:context=".RaceActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        >
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/heart1"
+            android:layout_width="1dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@mipmap/ic_heart_foreground" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/heart2"
+            android:layout_width="1dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@mipmap/ic_heart_foreground" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/heart3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@mipmap/ic_heart_foreground" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        >
+
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="150dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@mipmap/ic_left_foreground" />
+
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@mipmap/ic_right_foreground" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/road"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        android:weightSum="8">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rocket1"
+                android:layout_width="0dp"
+                android:visibility="invisible"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_rocket_foreground" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rocket2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_rocket_foreground" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rocket3"
+                android:layout_width="0dp"
+                android:visibility="invisible"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_rocket_foreground" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rocket4"
+                android:visibility="invisible"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_rocket_foreground" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rocket5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_rocket_foreground" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rocket6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_rocket_foreground" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rocket7"
+                android:visibility="invisible"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_rocket_foreground" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rocket8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_rocket_foreground" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rocket9"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_rocket_foreground" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rocket10"
+                android:layout_width="0dp"
+                android:visibility="invisible"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_rocket_foreground" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rocket11"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_rocket_foreground" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rocket12"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_rocket_foreground" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rocket13"
+                android:layout_width="0dp"
+                android:visibility="invisible"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_rocket_foreground" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rocket14"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_rocket_foreground" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rocket15"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_rocket_foreground" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rocket16"
+                android:layout_width="0dp"
+                android:visibility="invisible"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_rocket_foreground" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rocket17"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_rocket_foreground" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rocket18"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                android:scaleType="fitCenter"
+                app:srcCompat="@mipmap/ic_rocket_foreground" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.75"
+            android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/leftHouse"
+                android:visibility="invisible"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@mipmap/ic_house_foreground" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/centerHouse"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@mipmap/ic_house_foreground" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/rightHouse"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@mipmap/ic_house_foreground" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
