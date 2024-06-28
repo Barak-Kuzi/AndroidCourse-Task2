@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">raceapp</string>
+    <string name="app_name">Rocket App</string>
+    <string name="_10_highest_score">Top 10 Highest Score</string>
+    <string name="game_modes">Game Modes</string>
+    <string name="playing_nnormal_mode">Playing\nNormal Mode</string>
+    <string name="playing_nfast_mode">Playing\nFast Mode</string>
+    <string name="playing_nsensor_mode">Playing\nSensor Mode</string>
+    <string name="top_10">TOP 10</string>
+    <string name="highest_score">Highest Score</string>
+    <string name="odometer">Odometer: ---</string>
+
 </resources>

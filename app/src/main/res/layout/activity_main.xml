@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C4F3DFDF"
+    android:background="@drawable/sky"
     android:orientation="horizontal"
-    tools:context=".RaceActivity">
+    tools:context=".GameActivity">
+
+    <!-- Odometer(Distance counter) -->
+    <TextView
+        android:id="@+id/odometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/odometer"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
@@ -15,8 +28,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -52,8 +64,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginBottom="30dp"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
 
         <androidx.appcompat.widget.AppCompatImageButton
@@ -74,9 +85,7 @@
             android:background="@null"
             android:src="@mipmap/ic_right_foreground" />
 
-
     </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/road"
@@ -86,222 +95,474 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="60dp"
         android:orientation="vertical"
-        android:weightSum="8">
+        android:weightSum="10">
 
 
+        <!-- ROW 1 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
+            <!-- COL 1 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rocket1"
-                android:layout_width="0dp"
-                android:visibility="invisible"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_rocket_foreground" />
+                <include layout="@layout/rocket" android:id="@+id/rocket0" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin0" />
+            </RelativeLayout>
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rocket2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:visibility="invisible"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_rocket_foreground" />
+            <!-- COL 2 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rocket3"
-                android:layout_width="0dp"
-                android:visibility="invisible"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_rocket_foreground" />
+                <include layout="@layout/rocket" android:id="@+id/rocket1" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin1" />
+            </RelativeLayout>
 
+            <!-- COL 3 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
+                <include layout="@layout/rocket" android:id="@+id/rocket2" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin2" />
+            </RelativeLayout>
+
+            <!-- COL 4 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket3" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin3" />
+            </RelativeLayout>
+
+            <!-- COL 5 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket4" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin4" />
+            </RelativeLayout>
         </LinearLayout>
 
-
+        <!-- ROW 2 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rocket4"
-                android:visibility="invisible"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_rocket_foreground" />
+            <!-- COL 1 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rocket5"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:visibility="invisible"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_rocket_foreground" />
+                <include layout="@layout/rocket" android:id="@+id/rocket5" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin5" />
+            </RelativeLayout>
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rocket6"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:visibility="invisible"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_rocket_foreground" />
+            <!-- COL 2 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
+                <include layout="@layout/rocket" android:id="@+id/rocket6" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin6" />
+            </RelativeLayout>
+
+            <!-- COL 3 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket7" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin7" />
+            </RelativeLayout>
+
+            <!-- COL 4 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket8" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin8" />
+            </RelativeLayout>
+
+            <!-- COL 5 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket9" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin9" />
+            </RelativeLayout>
         </LinearLayout>
 
+        <!-- ROW 3 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rocket7"
-                android:visibility="invisible"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_rocket_foreground" />
+            <!-- COL 1 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rocket8"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:visibility="invisible"
-                android:layout_weight="1"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_rocket_foreground" />
+                <include layout="@layout/rocket" android:id="@+id/rocket10" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin10" />
+            </RelativeLayout>
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rocket9"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:visibility="invisible"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_rocket_foreground" />
+            <!-- COL 2 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket11" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin11" />
+            </RelativeLayout>
+
+            <!-- COL 3 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket12" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin12" />
+            </RelativeLayout>
+
+            <!-- COL 4 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket13" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin13" />
+            </RelativeLayout>
+
+            <!-- COL 5 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket14" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin14" />
+            </RelativeLayout>
         </LinearLayout>
 
+        <!-- ROW 4 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rocket10"
-                android:layout_width="0dp"
-                android:visibility="invisible"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_rocket_foreground" />
+            <!-- COL 1 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rocket11"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:visibility="invisible"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_rocket_foreground" />
+                <include layout="@layout/rocket" android:id="@+id/rocket15" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin15" />
+            </RelativeLayout>
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rocket12"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:visibility="invisible"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_rocket_foreground" />
+            <!-- COL 2 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
+                <include layout="@layout/rocket" android:id="@+id/rocket16" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin16" />
+            </RelativeLayout>
+
+            <!-- COL 3 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket17" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin17" />
+            </RelativeLayout>
+
+            <!-- COL 4 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket18" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin18" />
+            </RelativeLayout>
+
+            <!-- COL 5 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket19" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin19" />
+            </RelativeLayout>
         </LinearLayout>
 
+        <!-- ROW 5 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rocket13"
-                android:layout_width="0dp"
-                android:visibility="invisible"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_rocket_foreground" />
+            <!-- COL 1 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rocket14"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:visibility="invisible"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_rocket_foreground" />
+                <include layout="@layout/rocket" android:id="@+id/rocket20" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin20" />
+            </RelativeLayout>
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rocket15"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:visibility="invisible"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_rocket_foreground" />
+            <!-- COL 2 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
+                <include layout="@layout/rocket" android:id="@+id/rocket21" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin21" />
+            </RelativeLayout>
+
+            <!-- COL 3 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket22" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin22" />
+            </RelativeLayout>
+
+            <!-- COL 4 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket23" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin23" />
+            </RelativeLayout>
+
+            <!-- COL 5 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket24" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin24" />
+            </RelativeLayout>
         </LinearLayout>
 
+        <!-- ROW 6 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rocket16"
-                android:layout_width="0dp"
-                android:visibility="invisible"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_rocket_foreground" />
+            <!-- COL 1 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rocket17"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:visibility="invisible"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_rocket_foreground" />
+                <include layout="@layout/rocket" android:id="@+id/rocket25" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin25" />
+            </RelativeLayout>
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rocket18"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:visibility="invisible"
-                android:scaleType="fitCenter"
-                app:srcCompat="@mipmap/ic_rocket_foreground" />
+            <!-- COL 2 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
+                <include layout="@layout/rocket" android:id="@+id/rocket26" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin26" />
+            </RelativeLayout>
+
+            <!-- COL 3 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket27" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin27" />
+            </RelativeLayout>
+
+            <!-- COL 4 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket28" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin28" />
+            </RelativeLayout>
+
+            <!-- COL 5 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket29" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin29" />
+            </RelativeLayout>
         </LinearLayout>
 
+        <!-- ROW 7 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
+            <!-- COL 1 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket30" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin30" />
+            </RelativeLayout>
+
+            <!-- COL 2 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket31" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin31" />
+            </RelativeLayout>
+
+            <!-- COL 3 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket32" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin32" />
+            </RelativeLayout>
+
+            <!-- COL 4 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket33" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin33" />
+            </RelativeLayout>
+
+            <!-- COL 5 -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <include layout="@layout/rocket" android:id="@+id/rocket34" />
+                <include layout="@layout/israel_coin" android:id="@+id/israel_coin34" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!-- ROW 8 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <!-- COL 1 -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <include layout="@layout/rocket" android:id="@+id/rocket35" />
+            <include layout="@layout/israel_coin" android:id="@+id/israel_coin35" />
+        </RelativeLayout>
+
+        <!-- COL 2 -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <include layout="@layout/rocket" android:id="@+id/rocket36" />
+            <include layout="@layout/israel_coin" android:id="@+id/israel_coin36" />
+        </RelativeLayout>
+
+        <!-- COL 3 -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <include layout="@layout/rocket" android:id="@+id/rocket37" />
+            <include layout="@layout/israel_coin" android:id="@+id/israel_coin37" />
+        </RelativeLayout>
+
+        <!-- COL 4 -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <include layout="@layout/rocket" android:id="@+id/rocket38" />
+            <include layout="@layout/israel_coin" android:id="@+id/israel_coin38" />
+        </RelativeLayout>
+
+        <!-- COL 5 -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <include layout="@layout/rocket" android:id="@+id/rocket39" />
+            <include layout="@layout/israel_coin" android:id="@+id/israel_coin39" />
+        </RelativeLayout>
+    </LinearLayout>
+
+        <!--Liner of Houses-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -309,22 +570,39 @@
             android:orientation="horizontal">
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/leftHouse"
+                android:id="@+id/house0"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:visibility="invisible"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
                 app:srcCompat="@mipmap/ic_house_foreground" />
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/centerHouse"
+                android:id="@+id/house1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:visibility="invisible"
                 app:srcCompat="@mipmap/ic_house_foreground" />
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/rightHouse"
+                android:id="@+id/house2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="visible"
+                app:srcCompat="@mipmap/ic_house_foreground" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/house3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:visibility="invisible"
+                app:srcCompat="@mipmap/ic_house_foreground" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/house4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
