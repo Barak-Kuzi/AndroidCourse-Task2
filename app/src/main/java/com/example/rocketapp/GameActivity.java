@@ -61,12 +61,12 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void moveLeft(View view) {
-        GameManager.getInstance().moveHouse("left");
+        GameManager.getInstance().moveHouse(GameManager.LEFT);
         updateHouse();
     }
 
     public void moveRight(View view) {
-        GameManager.getInstance().moveHouse("right");
+        GameManager.getInstance().moveHouse(GameManager.RIGHT);
         updateHouse();
     }
 
@@ -127,6 +127,12 @@ public class GameActivity extends AppCompatActivity {
 
         if (GameManager.getInstance().getGameMode() == GameManager.SENSOR_MODE) {
             this.sensorSetup = new SensorSetup(getApplicationContext());
+            sensorSetup.setChangeUI(new ChangeUI() {
+                @Override
+                public void upDateUISensor() {
+                    updateHouse();
+                }
+            });
             left.setVisibility(View.GONE);
             right.setVisibility(View.GONE);
             this.sensorSetup.startSensor();
@@ -161,8 +167,6 @@ public class GameActivity extends AppCompatActivity {
         };
         handler.postDelayed(runnable, GameManager.getInstance().getGameMode());
     }
-
-
 
     @SuppressLint("SetTextI18n")
     public void updateUI() {

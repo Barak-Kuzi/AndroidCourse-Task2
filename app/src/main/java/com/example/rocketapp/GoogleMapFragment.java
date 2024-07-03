@@ -57,6 +57,7 @@ public class GoogleMapFragment extends Fragment implements OnMapReadyCallback {
             if (location != null) {
                 LatLng userLatLng = new LatLng(location.getLatitude(), location.getLongitude());
                 addMarkerToTheMap(userLatLng, "Your Location");
+                userLocationTracking.getCurrentUserLocation().removeObservers(this);
             }
         });
     }

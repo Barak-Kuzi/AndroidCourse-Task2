@@ -22,7 +22,7 @@
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBd9o2DDBgALjY-YcjDp73364BikpOOErA" />
+            android:value="AIzaSyDhb6j2y-HT9HEbjIw7AN-BEWC7MpvYhHg" />
         <activity
             android:name=".GameMenu"
             android:exported="true">
