@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/iron_swords_background"
-    tools:context=".GameActivity">
+    tools:context=".HighestScoreGame">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,24 +15,25 @@
         android:padding="20dp">
 
         <TextView
-            android:id="@+id/panel_LBL_score"
+            android:id="@+id/highestScoreTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="25dp"
+            android:layout_marginBottom="20dp"
             android:text="@string/_10_highest_score"
-            android:textColor="#F6FDFD"
             android:textSize="38sp"
-            android:textStyle="bold" />
+            android:textColor="#F6FDFD"
+            android:textStyle="bold"
+            android:background="#80000000"/>
 
         <FrameLayout
             android:id="@+id/frameScores"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="25dp"
             android:layout_weight="1" />
 
         <FrameLayout
-            android:id="@+id/frameMap"
+            android:id="@+id/frameGoogleMap"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1" />

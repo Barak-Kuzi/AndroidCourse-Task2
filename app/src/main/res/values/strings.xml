@@ -2,11 +2,19 @@
     <string name="app_name">Rocket App</string>
     <string name="_10_highest_score">Top 10 Highest Score</string>
     <string name="game_modes">Game Modes</string>
-    <string name="playing_nnormal_mode">Playing\nNormal Mode</string>
-    <string name="playing_nfast_mode">Playing\nFast Mode</string>
-    <string name="playing_nsensor_mode">Playing\nSensor Mode</string>
+    <string name="playing_normal_mode">Playing\nNormal Mode</string>
+    <string name="playing_fast_mode">Playing\nFast Mode</string>
+    <string name="playing_sensor_mode">Playing\nSensor Mode</string>
     <string name="top_10">TOP 10</string>
     <string name="highest_score">Highest Score</string>
     <string name="odometer">Odometer: ---</string>
+    <string name="game_over">GAME OVER</string>
+    <string name="your_score">YOUR SCORE</string>
+    <string name="value">###</string>
+    <string name="Instructions1">Please enter your name</string>
+    <string name="Instructions2">and click on Save Button</string>
+    <string name="save">Save</string>
+    <string name="menu">Menu</string>
+    <string name="userScore">---</string>
 
 </resources>

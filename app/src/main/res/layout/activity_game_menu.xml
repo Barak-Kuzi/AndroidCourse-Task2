@@ -5,33 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/iron_swords_background"
-    tools:context=".GameActivity"
+    tools:context=".GameMenu"
     >
 
     <TextView
+        android:id="@+id/labelMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/menu"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
         android:text="@string/game_modes"
         android:textSize="50sp"
-        android:layout_marginBottom="45dp"
         android:textColor="#F6FDFD"
-        android:textStyle="bold">
+        android:textStyle="bold"
+        android:background="#80000000">
     </TextView>
 
     <RelativeLayout
         android:id="@+id/menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_centerInParent="true" >
+        android:layout_below="@id/labelMode"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/normalModeBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/playing_nnormal_mode"
+            android:text="@string/playing_normal_mode"
             android:textSize="40sp"
             android:backgroundTint="#65EFCEB1"
             android:textColor="@android:color/black"
@@ -43,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/normalModeBtn"
             android:layout_marginTop="20dp"
-            android:text="@string/playing_nfast_mode"
+            android:text="@string/playing_fast_mode"
             android:textSize="40sp"
             android:backgroundTint="#65EFCEB1"
             android:textColor="@android:color/black"
@@ -55,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/fastModeBtn"
             android:layout_marginTop="20dp"
-            android:text="@string/playing_nsensor_mode"
+            android:text="@string/playing_sensor_mode"
             android:textSize="40sp"
             android:backgroundTint="#65EFCEB1"
             android:textColor="@android:color/black"
@@ -70,10 +73,11 @@
         android:layout_centerInParent="true"
         android:text="@string/top_10"
         android:textSize="50sp"
-        android:layout_marginTop="45dp"
-        android:textColor="#000000"
+        android:layout_marginTop="40dp"
+        android:textColor="#F6FDFD"
         android:layout_marginBottom="20dp"
-        android:textStyle="bold">
+        android:textStyle="bold"
+        android:background="#80000000">
     </TextView>
 
     <RelativeLayout

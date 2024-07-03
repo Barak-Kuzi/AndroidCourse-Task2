@@ -1,8 +1,10 @@
 package com.example.rocketapp;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -21,6 +23,7 @@ public class GameActivity extends AppCompatActivity {
     private TextView odometer;
     private Handler handler;
     private Runnable runnable;
+    private SensorSetup sensorSetup;
 
     private final int ROWS = 8;
     private final int COLS = 5;
@@ -31,6 +34,29 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (this.sensorSetup != null)
+            this.sensorSetup.stopSensor();
+        handler.removeCallbacks(runnable);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        handler.removeCallbacks(runnable);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (this.sensorSetup != null)
+            this.sensorSetup.startSensor();
+        GameManager.getInstance().restartGame();
         startGame();
     }
 
@@ -54,7 +80,6 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void init() {
-        GameManager.init(this);
         lives = new ShapeableImageView[]{
                 findViewById(R.id.heart1),
                 findViewById(R.id.heart2),
@@ -96,6 +121,16 @@ public class GameActivity extends AppCompatActivity {
         right.setOnClickListener(this::moveRight);
         left = findViewById(R.id.left);
         left.setOnClickListener(this::moveLeft);
+
+        int gameMode = getIntent().getIntExtra("gameMode", GameManager.SLOW_MODE);
+        GameManager.init(this, gameMode);
+
+        if (GameManager.getInstance().getGameMode() == GameManager.SENSOR_MODE) {
+            this.sensorSetup = new SensorSetup(getApplicationContext());
+            left.setVisibility(View.GONE);
+            right.setVisibility(View.GONE);
+            this.sensorSetup.startSensor();
+        }
     }
 
     public void updateLives() {
@@ -106,9 +141,13 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void timeTick() {
-        GameManager.getInstance().setRoad();
-        GameManager.getInstance().setRocketOrIsraelCoin();
-        updateUI();
+        if (GameManager.getInstance().isGameOver())
+            showGameOverScreen();
+        else {
+            GameManager.getInstance().setRoad();
+            GameManager.getInstance().setRocketOrIsraelCoin();
+            updateUI();
+        }
     }
 
     public void startGame() {
@@ -117,11 +156,13 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void run() {
                 timeTick();
-                handler.postDelayed(this, 800);
+                handler.postDelayed(this, GameManager.getInstance().getGameMode());
             }
         };
-        handler.postDelayed(runnable, 800);
+        handler.postDelayed(runnable, GameManager.getInstance().getGameMode());
     }
+
+
 
     @SuppressLint("SetTextI18n")
     public void updateUI() {
@@ -143,4 +184,13 @@ public class GameActivity extends AppCompatActivity {
         updateLives();
     }
 
+    private void showGameOverScreen() {
+        handler.removeCallbacks(runnable);
+        Intent intent = new Intent(this, GameOverActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putInt("score", GameManager.getInstance().getScore());
+        intent.putExtras(bundle);
+        startActivity(intent);
+        finish();
+    }
 }

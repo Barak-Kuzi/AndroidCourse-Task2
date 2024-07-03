@@ -1,0 +1,133 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/allUsersLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/user_1"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            android:backgroundTint="#65EFCEB1"
+            android:text="@string/userScore"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textStyle="bold|italic"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/user_2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            android:backgroundTint="#65EFCEB1"
+            android:text="@string/userScore"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textStyle="bold|italic"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/user_3"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            android:backgroundTint="#65EFCEB1"
+            android:text="@string/userScore"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textStyle="bold|italic"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/user_4"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            android:backgroundTint="#65EFCEB1"
+            android:text="@string/userScore"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textStyle="bold|italic"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/user_5"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            android:backgroundTint="#65EFCEB1"
+            android:text="@string/userScore"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textStyle="bold|italic"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/user_6"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            android:backgroundTint="#65EFCEB1"
+            android:text="@string/userScore"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textStyle="bold|italic"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/user_7"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            android:backgroundTint="#65EFCEB1"
+            android:text="@string/userScore"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textStyle="bold|italic"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/user_8"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            android:backgroundTint="#65EFCEB1"
+            android:text="@string/userScore"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textStyle="bold|italic"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/user_9"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            android:backgroundTint="#65EFCEB1"
+            android:text="@string/userScore"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textStyle="bold|italic"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/user_10"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            android:backgroundTint="#65EFCEB1"
+            android:text="@string/userScore"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:textStyle="bold|italic"/>
+    </LinearLayout>
+</ScrollView>
