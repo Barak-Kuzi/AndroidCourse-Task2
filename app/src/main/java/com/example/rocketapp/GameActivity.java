@@ -4,13 +4,14 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
 
+import com.example.rocketapp.GameUtility.SensorSetup;
+import com.example.rocketapp.Interfaces.ChangeUI;
 import com.google.android.material.imageview.ShapeableImageView;
 
 public class GameActivity extends AppCompatActivity {
@@ -173,15 +174,21 @@ public class GameActivity extends AppCompatActivity {
         int[][] road = GameManager.getInstance().getRoad();
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLS; j++) {
-                if (road[i][j] > 0) {
-                    if (road[i][j] == 1)
-                        rockets[i][j].setVisibility(View.VISIBLE);
-                    else
-                        israel_coins[i][j].setVisibility(View.VISIBLE);
-                } else {
-                    rockets[i][j].setVisibility(View.INVISIBLE);
-                    israel_coins[i][j].setVisibility(View.INVISIBLE);
-                }
+               switch (road[i][j]){
+                   case 0:
+                       rockets[i][j].setVisibility(View.INVISIBLE);
+                       israel_coins[i][j].setVisibility(View.INVISIBLE);
+                       break;
+                   case 1:
+                       rockets[i][j].setVisibility(View.VISIBLE);
+                       israel_coins[i][j].setVisibility(View.INVISIBLE);
+                       break;
+
+                   case 2:
+                       rockets[i][j].setVisibility(View.INVISIBLE);
+                       israel_coins[i][j].setVisibility(View.VISIBLE);
+                       break;
+               }
             }
         }
         odometer.setText("Odometer: " + GameManager.getInstance().getOdometer());
@@ -192,6 +199,7 @@ public class GameActivity extends AppCompatActivity {
         handler.removeCallbacks(runnable);
         Intent intent = new Intent(this, GameOverActivity.class);
         Bundle bundle = new Bundle();
+        bundle.putInt("meters", GameManager.getInstance().getOdometer());
         bundle.putInt("score", GameManager.getInstance().getScore());
         intent.putExtras(bundle);
         startActivity(intent);

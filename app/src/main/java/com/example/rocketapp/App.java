@@ -2,6 +2,7 @@ package com.example.rocketapp;
 
 import android.app.Application;
 
+import com.example.rocketapp.Models.GameUsers;
 import com.google.gson.Gson;
 
 public class App extends Application {

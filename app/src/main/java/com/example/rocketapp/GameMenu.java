@@ -24,7 +24,6 @@ public class GameMenu extends AppCompatActivity {
         init();
 
     }
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -39,6 +38,7 @@ public class GameMenu extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
     }
+
 
     public void init() {
         normalModeBtn = findViewById(R.id.normalModeBtn);

@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.rocketapp.GameUtility.UserLocationTracking;
 import com.google.android.material.button.MaterialButton;
 
 public class GameOverActivity extends AppCompatActivity {
@@ -32,6 +33,17 @@ public class GameOverActivity extends AppCompatActivity {
         init();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() { super.onPause(); }
+
+    @Override
+    protected void onStop() { super.onStop(); }
+
     @SuppressLint("SetTextI18n")
     public void init() {
         saveBtn = findViewById(R.id.saveButton);
@@ -39,7 +51,8 @@ public class GameOverActivity extends AppCompatActivity {
         scoreUI = findViewById(R.id.scoreValue);
         userName = findViewById(R.id.userInput);
 
-        this.scoreGame = getIntent().getIntExtra("score", 0);
+        this.scoreGame = getIntent().getIntExtra("score", 0) +
+                getIntent().getIntExtra("meters", 0);
         scoreUI.setText("" + scoreGame);
 
         menuBtn.setOnClickListener((event) -> goToGameMenu());

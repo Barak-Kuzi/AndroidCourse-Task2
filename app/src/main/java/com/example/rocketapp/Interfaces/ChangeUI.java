@@ -1,4 +1,4 @@
-package com.example.rocketapp;
+package com.example.rocketapp.Interfaces;
 
 public interface ChangeUI {
 

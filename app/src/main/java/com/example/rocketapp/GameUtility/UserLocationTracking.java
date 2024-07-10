@@ -1,4 +1,4 @@
-package com.example.rocketapp;
+package com.example.rocketapp.GameUtility;
 
 import android.app.Activity;
 import android.content.Context;

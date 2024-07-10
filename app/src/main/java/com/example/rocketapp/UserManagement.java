@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.rocketapp.Models.GameUsers;
+import com.example.rocketapp.Models.User;
 import com.google.gson.Gson;
 
 public class UserManagement {

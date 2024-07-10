@@ -1,4 +1,4 @@
-package com.example.rocketapp;
+package com.example.rocketapp.Models;
 
 public class User {
 

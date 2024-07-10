@@ -1,4 +1,4 @@
-package com.example.rocketapp;
+package com.example.rocketapp.Fragments;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -11,6 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.rocketapp.Interfaces.MapFunctionality;
+import com.example.rocketapp.Models.GameUsers;
+import com.example.rocketapp.Models.User;
+import com.example.rocketapp.R;
+import com.example.rocketapp.UserManagement;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.material.button.MaterialButton;
 import com.google.gson.Gson;
